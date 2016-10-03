@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "782013620458",
+    "firebase_url": "https://safariwalk-1ff0a.firebaseio.com",
+    "project_id": "safariwalk-1ff0a",
+    "storage_bucket": "safariwalk-1ff0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782013620458:android:d249100add914243",
+        "android_client_info": {
+          "package_name": "com.safariwalk.safariwalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782013620458-d0ubvrf9i0rh36odg0it3sgvroffh8jt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTXMi9UGbEea6OOiaYByD9Jv322SCTL60"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
