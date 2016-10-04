@@ -1,6 +1,7 @@
 package com.safariwalk.safariwalk;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -39,12 +40,11 @@ public class SignupActivity extends AppCompatActivity {
 
         mProgress = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("User");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
         mSignupBtn = (Button) findViewById(R.id.signupBtn);
         mSignupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 signupUser();
 
             }
@@ -59,6 +59,9 @@ public class SignupActivity extends AppCompatActivity {
 
        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)){
 
+           mProgress.setMessage("Signing Up...");
+           mProgress.show();
+
           mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
               @Override
               public void onComplete(@NonNull Task<AuthResult> task) {
@@ -70,14 +73,18 @@ public class SignupActivity extends AppCompatActivity {
                       current_userID.child("name").setValue(name);
                       current_userID.child("image").setValue("default");
 
+                      mProgress.dismiss();
+
+                      Intent mainIntent = new Intent(SignupActivity.this, MainActivity.class);
+                      mainIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                      startActivity(mainIntent);
                   }
 
               }
           });
 
-       }else {
-
        }
+
 
     }
 }
