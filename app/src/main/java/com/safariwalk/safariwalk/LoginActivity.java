@@ -31,5 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void checkUserExists() {
+
+        String email = mEmailField.getText().toString().trim();
+
     }
 }
